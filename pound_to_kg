@@ -1,1 +1,41 @@
+# pound to kg
+import tkinter as tk
+from tkinter import ttk
 
+
+def convert():
+    pound_input = entry_int.get()
+    pound_to_kg = pound_input*0.45359237 #convert pound to kilogram
+    output_string.set(pound_to_kg)
+
+
+# root
+root = tk.Tk()
+root.title('App for my love')
+root.geometry('800x450')
+
+# title
+title_label = ttk.Label(master=root, text='Pound to km', font="Calibri 24 bold")
+title_label.pack()
+
+# input field
+input_frame = ttk.Frame(master=root)
+entry_int = tk.IntVar()
+entry = ttk.Entry(master=input_frame, textvariable=entry_int)
+button = ttk.Button(master=input_frame, text='Convert', command=convert)
+entry.pack(side='left', padx=10)
+button.pack(side='left')
+input_frame.pack(pady=10)
+
+# output
+output_string=tk.StringVar()
+output_label = ttk.Label(
+    master=root,
+    text='Output',
+    font='Arial',
+    textvariable=output_string,
+)
+output_label.pack(pady=5)
+
+# run app
+root.mainloop()
