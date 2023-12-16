@@ -11,7 +11,7 @@ def convert():
 
 # root
 root = tk.Tk()
-root.title('App for my love')
+root.title('Pound to kg')
 root.geometry('800x450')
 
 # title
